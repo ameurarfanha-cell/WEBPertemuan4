@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas P4 - Tombol Back to Top</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header id="top">
+    <h1>Belajar Web Dasar</h1>
+    <p>Scroll ke bawah, lalu lihat tombol di kanan bawah.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Apa itu HTML?</h2>
+      <p>HTML adalah bahasa markup untuk membuat struktur halaman web.</p>
+    </section>
+    <section>
+      <h2>Apa itu CSS?</h2>
+      <p>CSS dipakai untuk mengatur tampilan: warna, ukuran, dan tata letak.</p>
+    </section>
+    <section>
+      <h2>Apa itu JavaScript?</h2>
+      <p>JavaScript membuat halaman web menjadi interaktif.</p>
+    </section>
+    <section>
+      <h2>Box Model</h2>
+      <p>Setiap elemen terdiri dari content, padding, border, dan margin.</p>
+    </section>
+    <section>
+      <h2>Flexbox</h2>
+      <p>Flexbox memudahkan penataan elemen secara horizontal dan vertikal.</p>
+    </section>
+    <section>
+      <h2>Grid</h2>
+      <p>CSS Grid dipakai untuk tata letak dua dimensi.</p>
+    </section>
+    <section>
+      <h2>Responsive Design</h2>
+      <p>Tampilan menyesuaikan ukuran layar menggunakan media query.</p>
+    </section>
+    <section>
+      <h2>Penutup</h2>
+      <p>Kamu sudah di bagian bawah. Klik tombol panah untuk kembali ke atas.</p>
+    </section>
+  </main>
+
+  <!-- Tombol kembali ke atas -->
+  <button id="btnTop" class="btn-top" aria-label="Kembali ke atas">
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script>
+    const btnTop = document.getElementById("btnTop");
+
+    // Muncul jika scroll > 500px
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 500) {
+        btnTop.classList.add("show");
+      } else {
+        btnTop.classList.remove("show");
+      }
+    });
+
+    // Klik: langsung ke posisi atas
+    btnTop.addEventListener("click", function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: #1f2937;
+  background: #f3f4f6;
+}
+
+header {
+  background: #1e3a8a;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+
+section {
+  background: #fff;
+  padding: 30px 24px;
+  margin-bottom: 24px;
+  min-height: 300px; /* total tinggi halaman > 2000px */
+  border-radius: 8px;
+}
+
+section h2 {
+  color: #1e3a8a;
+  margin-bottom: 12px;
+}
+
+/* ===== Tombol kembali ke atas ===== */
+.btn-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: #1f2937;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  /* hidden secara default */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+}
+
+/* muncul dengan opacity agar tidak mengganggu konten */
+.btn-top.show {
+  opacity: 0.5;
+  visibility: visible;
+}
+
+/* saat hover, opacity 100% */
+.btn-top.show:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
